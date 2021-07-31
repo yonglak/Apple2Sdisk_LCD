@@ -1,0 +1,13 @@
+LFUSE = 0xDE
+HFUSE = 0xD9
+EFUSE = 0x07
+
+If you are using avrdude the following command gets the job done, just need to change the programmer used:
+
+avrdude -c -p m328p -Ulfuse w: 0xDE: m -Uhfuse w: 0xd9: m -Uefuse w: 0x7: m 
+
+The feeding of the LCD and buttons must be made by the pins 7, 8 and 22 atmega. 
+The GND pin is in 8:22 
+but the VCC pin 7 has to be shared between the 2 wires of the LCD and buttons.
+
+Type make.exe
